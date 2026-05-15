@@ -1,28 +1,28 @@
 CCP020 - DIGITAL EXPERIENCE ULTIMATE
 Projeto - Reprodutor de Músicas
-Sobre o Projeto
+Sobre o projeto
 
-Este projeto foi desenvolvido utilizando um Arduino Uno com a proposta de criar um reprodutor de músicas simples e interativo utilizando componentes eletrônicos básicos.
+Esse projeto foi desenvolvido utilizando um Arduino Uno com a ideia de criar um pequeno reprodutor de músicas usando alguns componentes eletrônicos básicos.
 
-O sistema conta com um display LCD 16x2, buzzer, LEDs e botões para controle das funções. Através do menu exibido no LCD, o usuário pode escolher entre diferentes músicas, iniciar a reprodução, pausar ou parar a execução.
+O sistema possui um display LCD 16x2, buzzer, LEDs e botões para controle das funções. Pelo menu mostrado no LCD, o usuário consegue escolher a música, tocar, pausar ou parar a reprodução.
 
-Os LEDs ajudam a indicar o estado atual do sistema:
+Os LEDs servem para mostrar o estado do sistema:
 
-LED verde: música em reprodução
-LED vermelho: sistema pausado ou parado
-Objetivos
+LED verde ligado = música tocando
+LED vermelho ligado = sistema parado ou pausado
+Objetivo
 
-O principal objetivo do projeto foi aplicar conceitos de programação embarcada e eletrônica utilizando Arduino.
+O objetivo principal do projeto foi colocar em prática conteúdos vistos durante as aulas, principalmente programação embarcada e lógica utilizando Arduino.
 
-Durante o desenvolvimento foram trabalhados:
+Durante o desenvolvimento foram utilizados conceitos como:
 
 entradas e saídas digitais
-utilização de funções
+funções
 vetores
 lógica de programação
-controle de menu em LCD
-reprodução de sons por frequência
-Componentes Utilizados
+controle de menu
+reprodução de sons utilizando frequências
+Componentes utilizados
 Componente	Quantidade
 Arduino Uno	1
 Display LCD 16x2	1
@@ -32,26 +32,26 @@ LEDs	2
 Resistores	3
 Botões	4
 Jumpers	Vários
-Funcionamento do Sistema
+Funcionamento
 
-Ao iniciar o sistema, o LCD exibe um menu para seleção das músicas disponíveis.
+Quando o sistema é iniciado, o LCD mostra um menu para escolher as músicas disponíveis.
 
 Exemplo:
 
 Escolher musica:
 > Mario
 
-Os botões permitem navegar entre as opções e controlar a reprodução.
+Os botões permitem navegar pelo menu e controlar a música.
 
-Função dos Botões
+Função dos botões
 Botão	Função
-CIMA	Próxima música
-BAIXO	Música anterior
-PLAY	Tocar ou pausar
-STOP	Parar música
-Músicas Disponíveis
+CIMA	Passa para a próxima música
+BAIXO	Volta para a música anterior
+PLAY	Toca ou pausa
+STOP	Para a música
+Músicas disponíveis
 
-O projeto possui 8 músicas cadastradas no sistema:
+As músicas cadastradas no projeto são:
 
 Mario
 Harry Potter
@@ -61,36 +61,35 @@ Pac-Man
 Tetris
 Zelda
 Sonic
-Funcionamento Interno
+Como as músicas funcionam
 
-Cada música foi armazenada utilizando dois vetores:
+Cada música foi feita usando dois vetores:
 
-um vetor para as notas
-um vetor para o tempo de duração de cada nota
+um para armazenar as notas
+outro para armazenar o tempo de cada nota
 
 Exemplo:
 
 static int n[] = {659,659,0,659};
 static int d[] = {150,150,100,150};
 
-Onde:
+O vetor n[] guarda as frequências das notas e o vetor d[] guarda o tempo de duração.
 
-n[] representa as frequências das notas
-d[] representa o tempo de duração
-0 representa pausa ou silêncio
-Estrutura do Código
+Quando aparece 0, significa uma pausa na música.
 
-O código foi dividido em funções para facilitar a organização e manutenção do projeto.
+Organização do código
 
-Função	Objetivo
-mostrar_menu()	Exibe o menu no LCD
+O código foi separado em funções para facilitar o entendimento e a organização.
+
+Função	O que faz
+mostrar_menu()	Mostra o menu no LCD
 ler_botoes()	Faz a leitura dos botões
 iniciar_musica()	Inicia a reprodução
 rodar_pausa()	Pausa ou continua a música
-parar_tudo()	Para a reprodução
-tocar_som()	Executa as notas musicais
+parar_tudo()	Para tudo
+tocar_som()	Reproduz as notas
 buscar_dados()	Carrega os dados das músicas
-Ligações Principais
+Ligações principais
 LCD
 RS → Pino 12
 E → Pino 11
@@ -107,27 +106,26 @@ Saídas
 Buzzer → Pino 10
 LED Verde → Pino 13
 LED Vermelho → Pino A0
-Conceitos Aplicados
+Conceitos utilizados
 
-Durante o desenvolvimento do projeto foram utilizados conceitos importantes de programação e eletrônica, como:
+Durante o projeto foram utilizados vários conceitos importantes, como:
 
 variáveis
 vetores
 funções
 estruturas condicionais
-laços de repetição
+repetição
 ponteiros
 máquina de estados
-entradas e saídas digitais
 biblioteca LiquidCrystal
-Como Executar
+Como executar
 Abrir o código na IDE Arduino
-Conectar o Arduino Uno ao computador
+Conectar o Arduino Uno no computador
 Fazer o upload do código
-Montar o circuito conforme o esquema do projeto
-Utilizar os botões para navegar e controlar as músicas
-Resultado Final
+Montar o circuito
+Utilizar os botões para navegar pelas músicas
+Resultado final
 
-O projeto conseguiu reproduzir diferentes músicas utilizando buzzer e fornecer interação ao usuário através do display LCD e dos botões.
+No final, o projeto conseguiu reproduzir músicas utilizando buzzer e permitir interação pelo LCD e pelos botões.
 
-Além da parte funcional, o desenvolvimento permitiu colocar em prática conceitos de programação embarcada, organização de código e integração entre hardware e software.
+Além da parte funcional, o projeto ajudou bastante na prática de programação, organização do código e integração entre hardware e software.
