@@ -4,8 +4,6 @@
 
 Esse projeto foi desenvolvido utilizando um Arduino Uno junto com alguns componentes eletrônicos básicos para criar um pequeno reprodutor de músicas.
 
-A ideia surgiu para praticar conteúdos vistos em aula de uma forma mais prática e interativa, principalmente a parte de programação embarcada e controle de componentes utilizando Arduino.
-
 O sistema possui:
 - Display LCD 16x2
 - Buzzer
@@ -20,7 +18,7 @@ Com isso, o usuário consegue escolher músicas pelo LCD e controlar tudo utiliz
 # Integrantes
 
 - Kaike Frentzel De Oliveira
-- Pedro Cembrone De Sá
+- Pedro Henrique Cembrone De Sá
 
 ---
 
@@ -169,12 +167,12 @@ Durante o desenvolvimento do projeto foram utilizados conceitos como:
 ---
 
 # Como executar
-
-1. Abrir o código na IDE Arduino  
-2. Conectar o Arduino Uno no computador  
-3. Fazer o upload do código  
-4. Montar o circuito  
+1. Montar o circuito
+2. Abrir o código na IDE Arduino  
+3. Conectar o Arduino Uno no computador
+4. Fazer o upload do código 
 5. Utilizar os botões para controlar as músicas  
+
 
 ---
 
