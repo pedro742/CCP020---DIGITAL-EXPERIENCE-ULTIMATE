@@ -1,17 +1,19 @@
 # CCP020 - DIGITAL EXPERIENCE ULTIMATE
 
-## Projeto - Reprodutor de Músicas com Arduino
+## Reprodutor de Músicas com Arduino
 
-Esse projeto foi desenvolvido utilizando um Arduino Uno com a proposta de criar um pequeno reprodutor de músicas utilizando componentes eletrônicos básicos.
+Esse projeto foi desenvolvido utilizando um Arduino Uno junto com alguns componentes eletrônicos básicos para criar um pequeno reprodutor de músicas.
 
-A ideia principal era montar um sistema simples, mas interativo, onde o usuário pudesse escolher músicas através de um menu no display LCD e controlar a reprodução usando botões físicos.
+A ideia surgiu para praticar conteúdos vistos em aula de uma forma mais prática e interativa, principalmente a parte de programação embarcada e controle de componentes utilizando Arduino.
 
-O sistema conta com:
+O sistema possui:
 - Display LCD 16x2
 - Buzzer
-- LEDs de status
-- Botões de controle
+- LEDs
+- Botões
 - Menu de navegação
+
+Com isso, o usuário consegue escolher músicas pelo LCD e controlar tudo utilizando os botões do circuito.
 
 ---
 
@@ -22,23 +24,50 @@ O sistema conta com:
 
 ---
 
-# Objetivo do Projeto
+# Sobre o funcionamento
 
-O projeto foi criado para colocar em prática conteúdos vistos durante as aulas, principalmente conceitos relacionados a:
+Quando o sistema é ligado, aparece no display um menu com as músicas disponíveis.
 
-- Programação embarcada
-- Entradas e saídas digitais
-- Organização de código
-- Funções
-- Vetores
-- Lógica de programação
-- Controle de hardware utilizando Arduino
+Exemplo:
 
-Além disso, o projeto também ajudou bastante na parte de integração entre software e componentes eletrônicos.
+```text
+Escolher musica:
+> Mario
+```
+
+Utilizando os botões, é possível trocar de música, iniciar a reprodução, pausar e parar quando quiser.
+
+O LED verde indica quando a música está tocando e o LED vermelho indica quando o sistema está parado ou pausado.
 
 ---
 
-# Componentes Utilizados
+# Botões do sistema
+
+| Botão | Função |
+|---|---|
+| CIMA | Próxima música |
+| BAIXO | Música anterior |
+| PLAY | Tocar ou pausar |
+| STOP | Parar música |
+
+---
+
+# Músicas disponíveis
+
+As músicas adicionadas no projeto foram:
+
+- Mario
+- Harry Potter
+- Star Wars
+- Darth Vader
+- Pac-Man
+- Tetris
+- Zelda
+- Sonic
+
+---
+
+# Componentes utilizados
 
 | Componente | Quantidade |
 |---|---|
@@ -53,59 +82,9 @@ Além disso, o projeto também ajudou bastante na parte de integração entre so
 
 ---
 
-# Funcionamento do Sistema
-
-Quando o Arduino é ligado, o LCD mostra um menu para seleção das músicas disponíveis.
-
-Exemplo:
-
-```text
-Escolher musica:
-> Mario
-```
-
-Os botões permitem navegar entre as músicas e controlar a reprodução.
-
-## Função dos Botões
-
-| Botão | Função |
-|---|---|
-| CIMA | Próxima música |
-| BAIXO | Música anterior |
-| PLAY | Tocar ou pausar |
-| STOP | Parar música |
-
----
-
-# LEDs de Status
-
-| LED | Função |
-|---|---|
-| Verde | Música tocando |
-| Vermelho | Sistema parado ou pausado |
-
----
-
-# Músicas Disponíveis
-
-As músicas cadastradas no projeto são:
-
-- Mario
-- Harry Potter
-- Star Wars
-- Darth Vader
-- Pac-Man
-- Tetris
-- Zelda
-- Sonic
-
----
-
 # Como as músicas funcionam
 
-Cada música foi criada utilizando dois vetores:
-- um vetor para armazenar as notas
-- outro vetor para armazenar o tempo de duração
+As músicas foram feitas utilizando vetores com notas e tempos.
 
 Exemplo:
 
@@ -114,29 +93,31 @@ static int n[] = {659,659,0,659};
 static int d[] = {150,150,100,150};
 ```
 
-O vetor `n[]` guarda as frequências das notas e o vetor `d[]` guarda o tempo de duração de cada nota.
+O vetor `n[]` guarda as frequências das notas e o `d[]` guarda o tempo de duração de cada uma.
 
 Quando aparece `0`, significa uma pausa na música.
 
 ---
 
-# Organização do Código
+# Organização do código
 
-O código foi separado em funções para deixar a estrutura mais organizada e facilitar o entendimento.
+O código foi separado em funções para facilitar a organização e deixar mais fácil de entender.
+
+Algumas das principais funções utilizadas foram:
 
 | Função | O que faz |
 |---|---|
 | `mostrar_menu()` | Mostra o menu no LCD |
 | `ler_botoes()` | Faz a leitura dos botões |
-| `iniciar_musica()` | Inicia a reprodução |
-| `rodar_pausa()` | Pausa ou continua a música |
-| `parar_tudo()` | Para a reprodução |
-| `tocar_som()` | Executa as notas musicais |
+| `iniciar_musica()` | Inicia a música |
+| `rodar_pausa()` | Pausa ou continua a reprodução |
+| `parar_tudo()` | Para a música |
+| `tocar_som()` | Reproduz as notas |
 | `buscar_dados()` | Carrega os dados das músicas |
 
 ---
 
-# Ligações Utilizadas
+# Ligações utilizadas
 
 ## LCD
 
@@ -172,9 +153,9 @@ O código foi separado em funções para deixar a estrutura mais organizada e fa
 
 ---
 
-# Conceitos Utilizados
+# O que foi utilizado no projeto
 
-Durante o desenvolvimento do projeto foram utilizados vários conceitos importantes, como:
+Durante o desenvolvimento do projeto foram utilizados conceitos como:
 
 - Variáveis
 - Vetores
@@ -187,21 +168,21 @@ Durante o desenvolvimento do projeto foram utilizados vários conceitos importan
 
 ---
 
-# Como Executar
+# Como executar
 
 1. Abrir o código na IDE Arduino  
 2. Conectar o Arduino Uno no computador  
 3. Fazer o upload do código  
-4. Montar o circuito corretamente  
+4. Montar o circuito  
 5. Utilizar os botões para controlar as músicas  
 
 ---
 
-# Resultado Final
+# Resultado final
 
-O projeto conseguiu reproduzir diferentes músicas utilizando buzzer e fornecer interação através do LCD e dos botões.
+No final, o projeto conseguiu funcionar da forma esperada, reproduzindo músicas através do buzzer e permitindo o controle pelo LCD e pelos botões.
 
-Além da parte funcional, o desenvolvimento ajudou bastante na prática de programação, organização do código e integração entre hardware e software.
+Além da parte funcional, o projeto ajudou bastante na prática de programação, organização do código e integração entre hardware e software.
 
 ---
 
@@ -213,7 +194,7 @@ Além da parte funcional, o desenvolvimento ajudou bastante na prática de progr
 
 # Vídeo do Projeto
 
-Clique no link abaixo para assistir ao funcionamento do projeto:
+Vídeo mostrando o funcionamento do projeto:
 
 [Assistir vídeo no YouTube](https://youtube.com/shorts/e8fbsYHyTJE?si=T8x5NMm9kxQhim_A)
 
