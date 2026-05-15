@@ -188,7 +188,7 @@ Além da parte funcional, o projeto ajudou bastante na prática de programação
 
 # Imagem do Projeto
 
-![Projeto](Arduino.png)
+![Projeto](Arduino.PNG)
 
 ---
 
